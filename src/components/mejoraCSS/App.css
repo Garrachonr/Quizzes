@@ -1,0 +1,10 @@
+
+  nav.nav{text-align: center; font-size: 27px;margin-right: 80px;margin-left: 80px;padding-bottom: 20px; justify-content: space-between; display: flex;}
+  div.Language{padding-bottom: 10px;text-align: right;}
+  div.Space{padding-bottom: 20px; color: #cef5ff;}
+  header{padding-bottom: 1px;
+    text-align:center;
+    font-size: 30px;
+    color: rgb(16, 65, 68);
+    background-color: #afe3f0;
+    }

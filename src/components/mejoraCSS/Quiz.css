@@ -1,0 +1,6 @@
+#fpregunta{width: 500px; height: auto; min-height: 200px; display:block; margin:auto;}
+#fautor{float: right;height: 200px;width: auto; display:block; margin:auto;}
+#autor{float: left;}
+nav.buttons{text-align: center; font-size: 27px;margin-right: 140px;margin-left: 140px;padding-bottom: 20px; justify-content: space-between; display: flex;}
+div.Score{text-align: center; font-size: 25p;}
+div.timer{text-align: center; font-size: 25p;}

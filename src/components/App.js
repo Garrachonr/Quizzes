@@ -1,13 +1,20 @@
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
+import "./mejoraCSS/App.css";
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-bootstrap';
-import Tictac from './Tictactoe.js';
-//Hay que hacer el diccionario
-// import es from "./lang/es.json";
+import Quiz from './Quiz.js';
+import Tictactoe from './Tictactoe.js';
+import Home from './Home.js';
+import SelectorIdioma from "./SelectorIdioma";
+import { Routes, Route, NavLink } from "react-router-dom";
+//importamos idiomas
+import esp from "./idioma/esp.json";
+import en from "./idioma/en.json"
 
-export const LangContext = React.createContext({ userLang: "es", dictionary: es });
+//Hacemos un diccionario con los dos json
+const languages = { en, esp };
 
-export default function App(props) {
+export const LangContext = React.createContext({ userLang: "esp", dictionary: esp });
+
+export default function App() {
   const [lang, setLang] = useState("en");
   const handleLanguageChange = (event) => {
     setLang(event.target.value);
@@ -15,36 +22,34 @@ export default function App(props) {
 
   return (
     <div>
-      <LangContext.Provider value={{ handleLanguageChange: handleLanguageChange, userLang: lang, dictionary: dictionaryList[lang] }}>
+      <LangContext.Provider value={{ handleLanguageChange: handleLanguageChange, userLang: lang, dictionary: languages[lang] }}>
+        <div className="Language">
+          <SelectorIdioma />
+        </div>
+        <header className="Titulo">
+          Juegos Gratis 100% Real 1 Link Mega
+        </header>
+        <div className="space">
+          .
+        </div>
+
         <LangContext.Consumer>
           {(context) => {
-            return
-            <div>
-              <nav className='nav nav-tabs' roles="tablist">
-                <NavLink to="/">TicTacToe</NavLink>
-                <NavLink to="/tictactoe">TicTacToe</NavLink>
-                <NavLink to="/quiz">Quiz</NavLink>
+            return <div>
+              <nav className='nav nav' roles="tablist">
+                <NavLink to="/">{context.dictionary["Home"]}</NavLink>
+                <NavLink to="/tictactoe">{context.dictionary["Tictactoe"]}</NavLink>
+                <NavLink to="/quiz">{context.dictionary["Quiz"]}</NavLink>
               </nav>
             </div>
           }}
         </LangContext.Consumer>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="tictactoe" element={<TicTacToe />} />
+          <Route path="tictactoe" element={<Tictactoe />} />
           <Route path="quiz" element={<Quiz />} />
         </Routes>
       </LangContext.Provider>
     </div>
   );
-
-
-
-
-
-
-
-
-
-
-
 }
