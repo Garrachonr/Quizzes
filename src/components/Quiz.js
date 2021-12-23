@@ -6,7 +6,6 @@ import { LangContext } from "./App";
 import { useContext } from "react";
 import photo from './image2.png';
 import './mejoraCSS/Quiz.css';
-
 export default function Quiz(props) {
 
     const timer = 60
