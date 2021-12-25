@@ -5,6 +5,7 @@ import { quizzes } from "./mock-data";
 import { LangContext } from "./App";
 import { useContext } from "react";
 import photo from './image2.png';
+import cargando from "./cargando.jpeg"
 import './mejoraCSS/Quiz.css';
 export default function Quiz(props) {
 
@@ -81,7 +82,7 @@ export default function Quiz(props) {
             .then(json => { setQuizzess(json) })
         setTimeout(() => {
             setFlag(false);
-        }, 500)
+        }, 2000)
     }, []);
 
     //comprobamos la respuesta
@@ -242,36 +243,38 @@ export default function Quiz(props) {
     return (
         <LangContext.Consumer>{(context) => {
             return <div>
-                <h1>Pagina de juegos</h1>
-                {flag ? <img src={photo}></img> : <div className='general'>
+                <h1>Podrás con todos?</h1>
+                {flag ? <img className='cargando' src={cargando}></img> : <div className='general'>
                     {answer}
                     <nav className='buttons' roles="tablist">
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(0, resp0)}>1</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(1, resp1)}>2</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(2, resp2)}>3</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(3, resp3)}>4</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(4, resp4)}>5</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(5, resp5)}>6</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(6, resp6)}>7</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(7, resp7)}>8</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(8, resp8)}>9</button>
-                        <button disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(9, resp9)}>10</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(0, resp0)}>1</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(1, resp1)}>2</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(2, resp2)}>3</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(3, resp3)}>4</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(4, resp4)}>5</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(5, resp5)}>6</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(6, resp6)}>7</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(7, resp7)}>8</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(8, resp8)}>9</button>
+                        <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(9, resp9)}>10</button>
                     </nav>
                     <div className='timer'>
                         <Timer end={end} count={count} setCount={setCount} />
                     </div>
-                    <Game quiz={quizzess[currentQuiz]} teclaEnter={teclaEnter} escribiendo={escribiendo} finished={finished} answer={answer} comprobar={comprobar} Next={Siguiente} />
-                    <br />
-                    <button onClick={() => comprobar()}>
-                        {context.dictionary["Submit"]}
-                    </button>
-                    <button disabled={currentQuiz == 0} onClick={() => Anterior()}>
-                        {context.dictionary["Previous"]}
-                    </button>
-                    <button disabled={currentQuiz == quizzess.length - 1} onClick={() => Siguiente()}>
-                        {context.dictionary["Next"]}
-                    </button>
-                    <button onClick={() => Reset()}>{context.dictionary["Reset"]}</button>
+                    <div className='jugable'>
+                        <Game quiz={quizzess[currentQuiz]} teclaEnter={teclaEnter} escribiendo={escribiendo} finished={finished} answer={answer} comprobar={comprobar} Next={Siguiente} />
+                        <br />
+                        <button onClick={() => comprobar()}>
+                            {context.dictionary["Submit"]}
+                        </button>
+                        <button disabled={currentQuiz == 0} onClick={() => Anterior()}>
+                            {context.dictionary["Previous"]}
+                        </button>
+                        <button disabled={currentQuiz == quizzess.length - 1} onClick={() => Siguiente()}>
+                            {context.dictionary["Next"]}
+                        </button>
+                        <button onClick={() => Reset()}>{context.dictionary["Reset"]}</button>
+                    </div>
                 </div>}
             </div>
 

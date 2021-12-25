@@ -1,6 +1,8 @@
 #fpregunta{width: 500px; height: auto; min-height: 200px; display:block; margin:auto;}
-#fautor{float: right;height: 200px;width: auto; display:block; margin:auto;}
-#autor{float: left;}
+#fautor{float: center;height: 100px;width: auto; display:block; margin:auto;}
+#autor{float: center;}
 nav.buttons{text-align: center; font-size: 27px;margin-right: 140px;margin-left: 140px;padding-bottom: 20px; justify-content: space-between; display: flex;}
-div.Score{text-align: center; font-size: 25p;}
-div.timer{text-align: center; font-size: 25p;}
+div.timer{text-align: center; font-size: 40px;}
+img.cargando{display:block; margin:auto;width: 600px; height: auto;}
+div.jugable{text-align: center; font-size: 25p;}
+button.buttones{background-color: #afe3f0;}

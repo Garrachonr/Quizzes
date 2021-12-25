@@ -27,7 +27,7 @@ export default function App() {
           <SelectorIdioma />
         </div>
         <header className="Titulo">
-          Juegos Gratis 100% Real 1 Link Mega
+          Mejor que el dinosaurio de Google
         </header>
         <div className="space">
           .

@@ -62,8 +62,8 @@ export default function Tictactoe(props) {
   let text = lang.dictionary["TurnPlayer"] + " " + turn;
 
   return (
-    <div>
-      <Header text={text} />
+    <div className='tic'>
+      <h1>{text}</h1>
       <Board values={values} appClick={appClick} />
       <h3>{lang.dictionary["Numbermoves"]}: {moves}</h3>
       <Reset resetClick={resetClick}></Reset>

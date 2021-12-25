@@ -11,8 +11,7 @@ export default function Home(props) {
             {(context) => {
                 return <div>
                     <div className='TextInicio'>
-                        <img className='photo2' src={photo2} />
-                        <h1>Bienvenido a juegos online 24h 777</h1>
+                        <h1>Bienvenido a una serie de juegos desde tu navegador</h1>
                         <h1>Navega hasta el juego que quieras</h1>
                         <h1>Disfruta!</h1>
                         <img className='photo1' src={photo} />
