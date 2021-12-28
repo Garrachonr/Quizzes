@@ -26,16 +26,17 @@ export default function App() {
         <div className="Language">
           <SelectorIdioma />
         </div>
-        <header className="Titulo">
-          Mejor que el dinosaurio de Google
-        </header>
-        <div className="space">
-          .
-        </div>
+
 
         <LangContext.Consumer>
           {(context) => {
             return <div>
+              <header className="Titulo">
+                {context.dictionary["Title"]}
+              </header>
+              <div className="space">
+                .
+              </div>
               <nav className='nav nav' roles="tablist">
                 <NavLink to="/">{context.dictionary["Home"]}</NavLink>
                 <NavLink to="/tictactoe">{context.dictionary["Tictactoe"]}</NavLink>

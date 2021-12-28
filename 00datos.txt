@@ -1,0 +1,8 @@
+Alfredo Garrachón Ruiz
+Pablo Real.
+
+Mejoras:
+- Indice y Reset
+- Mejora CSS
+- Mejora cuenta atrás
+- Mejora tecla intro

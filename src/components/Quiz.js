@@ -107,6 +107,7 @@ export default function Quiz(props) {
     //avanzamos de pregunta
     function Siguiente() {
         if (currentQuiz != quizzess.length - 1) {
+            //setAnswer("")
             setCurrentQuiz(currentQuiz + 1);
             setFinished(0);
             switch (currentQuiz) {
@@ -145,6 +146,7 @@ export default function Quiz(props) {
     }
     //retrocedemos 
     function Anterior() {
+        //setAnswer("")
         setCurrentQuiz(currentQuiz - 1);
         setFinished(0);
         switch (currentQuiz) {
@@ -243,9 +245,8 @@ export default function Quiz(props) {
     return (
         <LangContext.Consumer>{(context) => {
             return <div>
-                <h1>Podrás con todos?</h1>
+                <h1>{context.dictionary["Mot"]}</h1>
                 {flag ? <img className='cargando' src={cargando}></img> : <div className='general'>
-                    {answer}
                     <nav className='buttons' roles="tablist">
                         <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(0, resp0)}>1</button>
                         <button className='buttones' disabled={finished == 1 & currentQuiz == quizzess.length - 1} onClick={() => anex(1, resp1)}>2</button>
